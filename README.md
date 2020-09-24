@@ -1,2 +1,5 @@
-# docker_training
-Docker training materials. Dockerfiles and examples
+# Docker Training - WIP
+
+Docker class. Examples in folders.
+
+Prof. Dr. Neylson Crepalde
