@@ -15,8 +15,6 @@ def load_model():
     except:
         logging.error('Model not loaded')
 
-model = load_model()
-
 def predict_new(X, probs=True):
     p = model.get_preprocessing()
     
@@ -32,6 +30,7 @@ def predict_new(X, probs=True):
     else:
         return model.predict(X)
 
+model = load_model()
 
 @app.route('/invocations', methods=['POST'])
 def predict():
@@ -46,5 +45,4 @@ def health_check():
 
 
 if __name__ == "__main__":
-    model = load_model()
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0')

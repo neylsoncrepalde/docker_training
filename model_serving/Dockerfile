@@ -46,4 +46,4 @@ ENV PYTHONPATH="/opt/ml/code/src:${PATH}"
 EXPOSE 5000
 
 # Execution command
-CMD python3 app.py
+CMD ["gunicorn", "-w", "3", "-b", ":5000", "-t", "360", "--reload", "wsgi:app"]
